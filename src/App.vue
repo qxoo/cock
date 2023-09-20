@@ -9,10 +9,12 @@
         :key="idx"
         @click="setSelectedDrink(idx)"
         :class="{ selected: idx === ifSelected }"
+        style="cursor: default;"
         >{{ items.strDrink }}</drinkButton
       >
     </div>
     <drinkContent
+    v-if="!show404"
       class="wrapper_content"
       :drink="drinkStore?.drinks[ifSelected]?.strDrink"
       :category="drinkStore?.drinks[ifSelected]?.strCategory"
